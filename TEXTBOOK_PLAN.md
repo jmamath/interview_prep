@@ -1,6 +1,6 @@
 # OpenAI Interview Preparation Textbook
 
-## Current Status: Chapters 1 & 2 Complete ✅
+## Current Status: Chapters 1, 2, 3 & 4 Complete ✅
 
 ### Overview
 
@@ -204,21 +204,61 @@ Each chapter contains:
 
 ---
 
-### Chapter 4: Optimization Algorithms
+### ✅ Chapter 4: Optimization Algorithms
 
-**Status**: NOT STARTED
+**Status**: COMPLETE
 
 **Learning Objectives:**
-- Understand gradient-based optimization methods
-- Implement momentum, adaptive learning rates, and second-order methods
-- Analyze convergence properties
+- Implement gradient descent variants (SGD, momentum, Nesterov)
+- Understand adaptive learning rate methods (Adam, RMSprop)
+- Design and implement learning rate schedules for stable training
+- Apply constrained optimization with proximal operators
+- Handle gradient instabilities with clipping and trust regions
 
-**Planned Problems:**
-1. Gradient Descent Variants (Easy-Medium)
-2. Adam Optimizer (Medium)
-3. Learning Rate Scheduling (Medium)
-4. Newton's Method and Quasi-Newton (Medium-Hard)
-5. Constrained Optimization (Hard)
+**Problems & Structure:**
+
+1. **Gradient Descent Variants** (Easy)
+   - Context: Training CNN on MNIST with momentum for faster convergence
+   - Key Concepts: Vanilla SGD, momentum, Nesterov momentum, convergence
+   - Example: 5-step comparison of vanilla SGD vs momentum on quadratic function
+   - Starter Code: 3 TODOs for vanilla SGD, momentum, and Nesterov implementations
+   - Tests: 3 test cases (convergence, momentum speed, Nesterov accuracy)
+   
+2. **Adam Optimizer** (Medium)
+   - Context: Fine-tuning BERT with adaptive learning rates for different parameter scales
+   - Key Concepts: First/second moments, bias correction, numerical stability
+   - Example: 3-iteration trace showing m, v, bias correction, and parameter updates
+   - Starter Code: 2 TODOs for moment buffer initialization and Adam update rule
+   - Tests: 3 test cases (convergence, bias correction, multi-scale gradients)
+
+3. **Learning Rate Scheduling** (Medium)
+   - Context: GPT pretraining with warmup and cosine decay for stability
+   - Key Concepts: Step decay, cosine annealing, warmup, combined schedules
+   - Example: Visualization of 3 schedules (step decay, cosine, warmup+cosine) over 1000 steps
+   - Starter Code: 3 TODOs for step_decay(), cosine_annealing(), warmup_cosine()
+   - Tests: 3 test cases (step boundaries, cosine min/max, warmup phase)
+
+4. **Projected Gradient Descent** (Medium-Hard)
+   - Context: Sparse neural networks with L1 regularization and RL safety bounds
+   - Key Concepts: Soft thresholding, box constraints, proximal operators, sparsity
+   - Example: Soft thresholding walkthrough showing exact zeros and 3-step optimization
+   - Starter Code: 3 TODOs for soft_threshold(), project_box(), step()
+   - Tests: 3 test cases (soft thresholding values, box projection, sparsity induction)
+
+5. **Gradient Clipping and Constraints** (Hard)
+   - Context: Transformer training with gradient explosion and RLHF trust regions
+   - Key Concepts: Gradient norm, norm clipping, value clipping, trust regions
+   - Example: Gradient explosion scenario with/without clipping, norm vs value comparison
+   - Starter Code: 4 TODOs for compute_grad_norm(), clip_by_norm(), clip_by_value(), step_with_constraint()
+   - Tests: 3 test cases (norm computation, clipping trigger, value clipping)
+
+**Implementation Details:**
+- All problems use PyTorch tensors and follow PyTorch optimizer interface
+- Total of 15 TODOs across all 5 problems
+- Each problem has example code demonstrating concepts without revealing solutions
+- All tests validate correctness without showing implementation details
+- Includes matplotlib visualizations for learning rate schedules
+- JSON notebook structure is valid (1413 lines, 37 cells)
 
 ---
 
@@ -395,7 +435,13 @@ Each problem has this pattern:
    - Starter code structure ready for student exercises
    - Comprehensive tests included (2-3 per problem)
 
-4. **Chapter 4**: Optimization Algorithms ⏳
+4. **Chapter 4**: Optimization Algorithms ✅
+   - All 5 problems with contextual introductions
+   - 15 TODOs total across all problems
+   - Examples for all problems (momentum mechanics, Adam trace, LR schedules, soft thresholding, gradient explosion)
+   - PyTorch-based implementations following optimizer interface
+   - JSON validated (1413 lines, 37 cells)
+
 5. **Chapter 5**: Training Efficiency & Memory ⏳
 6. **Chapter 6**: Inference Efficiency & Quantization ⏳
 7. **Chapter 7**: Dataset Processing & Shuffling ⏳
