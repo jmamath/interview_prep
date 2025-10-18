@@ -147,21 +147,60 @@ Each chapter contains:
 
 ---
 
-### Chapter 3: Streaming & Online Algorithms
+### ✅ Chapter 3: Streaming & Online Algorithms
 
-**Status**: NOT STARTED
+**Status**: COMPLETE
 
 **Learning Objectives:**
 - Process data that doesn't fit in memory (streaming)
 - Implement online learning algorithms
 - Understand frequency estimation and cardinality counting
+- Apply streaming algorithms to real-time ML systems
 
-**Planned Problems:**
-1. Frequency Estimation with Count-Min Sketch (Easy-Medium)
-2. Cardinality Estimation with HyperLogLog (Medium)
-3. Online Mean and Variance Computation (Medium)
-4. Reservoir Sampling (Medium)
-5. Online Gradient Descent (Hard)
+**Problems & Structure:**
+
+1. **Frequency Estimation with Count-Min Sketch** (Easy-Medium)
+   - Context: Google search query frequency estimation
+   - Key Concepts: Probabilistic data structures, hash collisions, space-time tradeoff
+   - Example: Step-by-step sketch updates with 2 rows and 4 buckets
+   - Starter Code: TODO for update() and query() methods
+   - Tests: 3 test cases
+
+2. **Cardinality Estimation with HyperLogLog** (Medium)
+   - Context: Facebook unique daily active user counting
+   - Key Concepts: Probabilistic counting, harmonic mean, leading zero patterns
+   - Example: Coin flip intuition and register updates with binary hashing
+   - Starter Code: TODO for add() and count() methods
+   - Tests: 2 test cases
+
+3. **Online Mean and Variance Computation** (Medium)
+   - Context: BatchNorm statistics for neural networks
+   - Key Concepts: Numerical stability, Welford's algorithm
+   - Example: Complete trace of mean/variance computation for [4,7,13,16]
+   - Starter Code: TODO for update() and variance() methods
+   - Tests: 2 test cases
+
+4. **Reservoir Sampling** (Medium)
+   - Context: Recommendation system sampling from activity streams
+   - Key Concepts: Uniform random sampling, single-pass algorithm
+   - Example: 8-step walkthrough showing probability preservation
+   - Starter Code: TODO for add() method
+   - Tests: 2 test cases
+
+5. **Online Gradient Descent** (Hard)
+   - Context: Real-time learning for online advertising
+   - Key Concepts: SGD, learning rate schedules, regret bounds
+   - Example: 2 gradient steps showing weight updates and lr decay
+   - Starter Code: TODO for partial_fit() and predict() methods
+   - Tests: 2 test cases
+
+**Implementation Details:**
+- All problems have contextual introductions with real-world ML applications
+- All problems include example code demonstrating algorithms without revealing solutions
+- Examples cover: Hash table mechanics, probabilistic counting, numerical stability, sampling proofs, gradient updates
+- Starter code with TODO markers (not complete solutions)
+- 2-3 focused tests per question for validation
+- JSON notebook is valid and parses correctly
 
 ---
 
@@ -350,7 +389,12 @@ Each problem has this pattern:
     - Ready for exercise conversion (same pattern as Ch1)
     - Comprehensive tests included
 
-3. **Chapter 3**: Streaming & Online Algorithms ⏳
+3. **Chapter 3**: Streaming & Online Algorithms ✅
+   - All 5 problems with contextual introductions
+   - All 5 problems now include example code demonstrations
+   - Starter code structure ready for student exercises
+   - Comprehensive tests included (2-3 per problem)
+
 4. **Chapter 4**: Optimization Algorithms ⏳
 5. **Chapter 5**: Training Efficiency & Memory ⏳
 6. **Chapter 6**: Inference Efficiency & Quantization ⏳
