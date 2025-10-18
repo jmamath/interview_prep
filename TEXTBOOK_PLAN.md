@@ -105,38 +105,45 @@ Each chapter contains:
 1. **Simple Beam Search** (Easy)
    - Context: Machine translation use case
    - Key Concepts: Beam width, greedy vs beam search
+   - Example: Step-by-step beam search walkthrough with small vocabulary
    - Exercise: Implement basic `BeamSearch` class
    - Tests: 3 test cases
 
 2. **Top-k Beam Search with Scores** (Medium)
    - Context: Summary generation diversity
    - Key Concepts: Length normalization, diversity penalty, temperature sampling
+   - Example: Length normalization vs diversity penalty calculations
    - Exercise: Extend to `TopKBeamSearch` with scoring
    - Tests: 3 test cases
 
 3. **Viterbi Algorithm for Sequence Tagging** (Medium)
    - Context: POS tagging in NLP
    - Key Concepts: HMMs, transition/emission probabilities, forward/backward passes
+   - Example: Manual Viterbi computation trace for "the cat sat"
    - Exercise: Implement `HMMTagger` with Viterbi algorithm
    - Tests: 3 test cases
 
 4. **Constrained Beam Search** (Medium-Hard)
    - Context: Chatbot safety constraints
    - Key Concepts: Constraint satisfaction, early pruning
+   - Example: How constraints filter beam candidates and prune search space
    - Exercise: Implement constraint classes and `ConstrainedBeamSearch`
    - Tests: 3 test cases
 
 5. **Diverse Beam Search with Groups** (Hard)
    - Context: Creative writing diversity
    - Key Concepts: Sequence similarity, grouping, quality-diversity tradeoff
+   - Example: Jaccard similarity calculation and grouping for diversity
    - Exercise: Implement `DiverseBeamSearch` with similarity-based grouping
    - Tests: 3 test cases
 
 **Implementation Details:**
-- All problems have contextual introductions
-- Each includes real-world ML applications
-- Starter code structure ready for student exercises
-- 2-3 tests per question for validation
+- All problems have contextual introductions with real-world ML applications
+- All problems include example code demonstrating concepts without revealing solutions
+- Examples cover: Beam search steps, length normalization, Viterbi computation, constraint filtering, sequence similarity
+- Starter code with TODO markers (not complete solutions)
+- 2-3 focused tests per questi for validation
+- JSON notebook is valid and parses correctly
 
 ---
 
