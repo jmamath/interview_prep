@@ -92,7 +92,7 @@ Each chapter contains:
 
 ### ✅ Chapter 2: Classic DP/Graphs for ML Engineers
 
-**Status**: COMPLETE (Pedagogically Revised)
+**Status**: COMPLETE
 
 **Learning Objectives:**
 - Implement beam search variants for sequence generation
@@ -339,9 +339,9 @@ Each problem has this pattern:
    - JSON validated
 
 2. **Chapter 2**: Classic DP/Graphs ✅
-   - All 5 problems with contextual introductions
-   - Ready for exercise conversion (same pattern as Ch1)
-   - Comprehensive tests included
+    - All 5 problems with contextual introductions
+    - Ready for exercise conversion (same pattern as Ch1)
+    - Comprehensive tests included
 
 3. **Chapter 3**: Streaming & Online Algorithms ⏳
 4. **Chapter 4**: Optimization Algorithms ⏳
