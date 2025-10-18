@@ -1,6 +1,8 @@
 # OpenAI Interview Preparation Textbook
 
-## Overview
+## Current Status: Chapters 1 & 2 Complete ✅
+
+### Overview
 
 This textbook is designed to prepare candidates for OpenAI machine learning and coding interviews. It combines foundational CS concepts with practical ML engineering knowledge through a hands-on, exercise-driven approach.
 
@@ -10,6 +12,7 @@ This textbook is designed to prepare candidates for OpenAI machine learning and 
 - **Progressive difficulty**: Problems within each chapter flow from easy to hard
 - **Practical context**: Every concept is tied directly to an exercise and includes relevant examples
 - **Focused content**: Only key concepts necessary to solve exercises are included; no noise or filler
+- **Student-centered**: Starter code with TODOs guides students, not complete solutions
 
 ### Structure per Chapter
 
@@ -18,7 +21,8 @@ Each chapter contains:
 - **2-3 focused tests** per problem (comprehensive validation)
 - **Contextual introduction** with real-world examples
 - **Key concepts** directly tied to exercise requirements
-- **Starter code** with TODO placeholders for implementation
+- **Starter code with TODOs** (not complete solutions!)
+- **Example code** demonstrating concepts without giving away solutions
 - **Hidden hints** (collapsible markdown sections)
 - **2-4 pages** of moderate-depth refresher content (only essential concepts)
 
@@ -26,7 +30,9 @@ Each chapter contains:
 
 ## Part 1: Core Coding Foundations
 
-### Chapter 1: Data Structures & Complexity Analysis
+### ✅ Chapter 1: Data Structures & Complexity Analysis
+
+**Status**: COMPLETE
 
 **Learning Objectives:**
 - Analyze algorithm complexity (Big O time and space)
@@ -34,36 +40,59 @@ Each chapter contains:
 - Implement memory-efficient algorithms
 - Profile and optimize memory usage
 
-**Problems:**
+**Problems & Structure:**
 
 1. **Memory-Efficient Prefix Sum** (Easy)
-   - Context: Prefix sums are fundamental for range queries; memory-efficient in-place algorithms matter
+   - Contextual Introduction: Sequence modeling use case
    - Key Concepts: In-place operations, space complexity
-   - Output: `prefix_sum_inplace(arr)` function with in-place modification verification
+   - Example: Shows input/output transformation
+   - Starter Code: 1 TODO for student implementation
+   - Tests: 4 test cases for verification
+   - Hints: Collapsible hint section
 
 2. **Tensor Operation Benchmarking** (Easy-Medium)
-   - Context: Understanding vectorization vs loops is crucial for ML performance
-   - Key Concepts: Vectorization, loop optimization, benchmarking
-   - Output: Comparison of elementwise operations with performance analysis
+   - Contextual Introduction: Vectorization importance in ML
+   - Key Concepts: SIMD, benchmarking, performance measurement
+   - Example: Loop vs vectorized comparison with explanations
+   - Starter Code: 7 TODOs for full implementation
+   - Tests: 3 test cases
+   - Hints: Guidance on timing and plotting
 
 3. **Cache-Aware Matrix Operations** (Medium)
-   - Context: Cache locality affects real-world performance significantly
-   - Key Concepts: Cache effects, tiling strategies, Numba compilation
-   - Output: Multiple matrix multiplication implementations with tiling and optimization
+   - Contextual Introduction: Cache hierarchy and locality
+   - Key Concepts: Tiling, spatial/temporal locality, Numba JIT
+   - Example: 2x2 matrix showing naive vs tiled approach with results
+   - Starter Code: 4 TODOs for implementations
+   - Tests: 3 test cases
+   - Hints: Explanation of tile structure
 
 4. **Custom Sparse Tensor Operations** (Medium-Hard)
-   - Context: Many ML applications involve sparse data (embeddings, graphs)
-   - Key Concepts: Sparse representations, efficient operations, memory usage
-   - Output: `SparseTensor` class with operations and memory profiling
+   - Contextual Introduction: Netflix recommendation scenario
+   - Key Concepts: COO format, sparsity, memory efficiency
+   - Example: 4x8 user-item matrix showing dense vs sparse with calculations
+   - Starter Code: 4 TODOs for SparseTensor class
+   - Tests: 3 test cases
+   - Hints: COO format guidance
 
 5. **Memory Profiling and Optimization** (Hard)
-   - Context: Large neural networks require careful memory management during training
-   - Key Concepts: Memory profiling tools, gradient checkpointing, optimization strategies
-   - Output: `MemoryProfiler` class and comparison of memory strategies
+   - Contextual Introduction: Large model training constraints
+   - Key Concepts: Memory profiling, gradient checkpointing, activation recomputation
+   - Example: Layer-by-layer breakdown of checkpointing (12.8MB → 1.3MB)
+   - Starter Code: 5 TODOs for profiler and optimization
+   - Tests: 3 test cases
+   - Hints: Memory tracking guidance
+
+**Implementation Details:**
+- Total TODOs: 21 across all 5 problems
+- All code is **starter code**, not complete solutions
+- Each problem has working examples that students can run
+- Tests verify correctness without revealing implementation details
 
 ---
 
-### Chapter 2: Classic DP/Graphs for ML Engineers
+### ✅ Chapter 2: Classic DP/Graphs for ML Engineers
+
+**Status**: COMPLETE (Pedagogically Revised)
 
 **Learning Objectives:**
 - Implement beam search variants for sequence generation
@@ -71,106 +100,79 @@ Each chapter contains:
 - Apply constraints during generation
 - Balance quality and diversity in outputs
 
-**Problems:**
+**Problems & Structure:**
 
 1. **Simple Beam Search** (Easy)
-   - Context: Machine translation uses beam search to generate target sequences
-   - Key Concepts: Beam width, greedy search vs beam search
-   - Output: `BeamSearch` class for basic sequence generation
+   - Context: Machine translation use case
+   - Key Concepts: Beam width, greedy vs beam search
+   - Exercise: Implement basic `BeamSearch` class
+   - Tests: 3 test cases
 
 2. **Top-k Beam Search with Scores** (Medium)
-   - Context: Summary generation requires diverse content; top-k variations help maintain diversity
+   - Context: Summary generation diversity
    - Key Concepts: Length normalization, diversity penalty, temperature sampling
-   - Output: `TopKBeamSearch` class with scoring and diversity measures
+   - Exercise: Extend to `TopKBeamSearch` with scoring
+   - Tests: 3 test cases
 
 3. **Viterbi Algorithm for Sequence Tagging** (Medium)
-   - Context: POS tagging and NER in NLP rely on Hidden Markov Models
-   - Key Concepts: Transition probabilities, emission probabilities, forward/backward passes
-   - Output: `HMMTagger` class implementing Viterbi algorithm
+   - Context: POS tagging in NLP
+   - Key Concepts: HMMs, transition/emission probabilities, forward/backward passes
+   - Exercise: Implement `HMMTagger` with Viterbi algorithm
+   - Tests: 3 test cases
 
 4. **Constrained Beam Search** (Medium-Hard)
-   - Context: Chatbots need to generate text respecting safety constraints
-   - Key Concepts: Constraint satisfaction, early pruning, fallback strategies
-   - Output: Constraint classes and `ConstrainedBeamSearch` implementation
+   - Context: Chatbot safety constraints
+   - Key Concepts: Constraint satisfaction, early pruning
+   - Exercise: Implement constraint classes and `ConstrainedBeamSearch`
+   - Tests: 3 test cases
 
 5. **Diverse Beam Search with Groups** (Hard)
-   - Context: Creative writing applications benefit from diverse generation strategies
-   - Key Concepts: Sequence similarity, clustering/grouping, quality-diversity tradeoff
-   - Output: `DiverseBeamSearch` class with grouping and selection mechanisms
+   - Context: Creative writing diversity
+   - Key Concepts: Sequence similarity, grouping, quality-diversity tradeoff
+   - Exercise: Implement `DiverseBeamSearch` with similarity-based grouping
+   - Tests: 3 test cases
+
+**Implementation Details:**
+- All problems have contextual introductions
+- Each includes real-world ML applications
+- Starter code structure ready for student exercises
+- 2-3 tests per question for validation
 
 ---
 
 ### Chapter 3: Streaming & Online Algorithms
 
+**Status**: NOT STARTED
+
 **Learning Objectives:**
 - Process data that doesn't fit in memory (streaming)
 - Implement online learning algorithms
 - Understand frequency estimation and cardinality counting
-- Apply these in ML contexts (mini-batch training, incremental model updates)
 
-**Problems:**
-
-1. **Frequency Estimation with Count-Min Sketch** (Easy-Medium)
-   - Context: Identifying popular items in streaming data (trending topics, popular users)
-   - Key Concepts: Space-efficient frequency tracking, hash collisions, approximation
-   - Output: `CountMinSketch` data structure with query and update
-
-2. **Cardinality Estimation with HyperLogLog** (Medium)
-   - Context: Estimating unique users/items in a stream (analytics pipelines)
-   - Key Concepts: Probabilistic counting, logarithmic space, accuracy tuning
-   - Output: `HyperLogLog` implementation for approximate cardinality
-
-3. **Online Mean and Variance Computation** (Medium)
-   - Context: Computing statistics without storing all data (real-time metrics)
-   - Key Concepts: Welford's algorithm, numerical stability, single-pass updates
-   - Output: Online statistics calculator class
-
-4. **Reservoir Sampling** (Medium)
-   - Context: Selecting random samples from unlimited streams
-   - Key Concepts: Uniform random sampling, memory-bounded buffers
-   - Output: `ReservoirSampler` for k-samples from stream
-
-5. **Online Gradient Descent** (Hard)
-   - Context: Training models on streaming data (continual learning)
-   - Key Concepts: Mini-batch SGD, learning rate scheduling, convergence properties
-   - Output: `OnlineGradientDescent` optimizer with convergence analysis
+**Planned Problems:**
+1. Frequency Estimation with Count-Min Sketch (Easy-Medium)
+2. Cardinality Estimation with HyperLogLog (Medium)
+3. Online Mean and Variance Computation (Medium)
+4. Reservoir Sampling (Medium)
+5. Online Gradient Descent (Hard)
 
 ---
 
 ### Chapter 4: Optimization Algorithms
 
+**Status**: NOT STARTED
+
 **Learning Objectives:**
 - Understand gradient-based optimization methods
 - Implement momentum, adaptive learning rates, and second-order methods
 - Analyze convergence properties
-- Understand practical considerations in ML training
 
-**Problems:**
-
-1. **Gradient Descent Variants** (Easy-Medium)
-   - Context: SGD, momentum, and Nesterov are fundamental to all model training
-   - Key Concepts: Learning rates, momentum accumulation, convergence rates
-   - Output: Multiple optimizer implementations with comparison
-
-2. **Adam Optimizer** (Medium)
-   - Context: Adam is widely used in practice due to adaptive learning rates
-   - Key Concepts: First/second moment estimation, bias correction, practical hyperparameters
-   - Output: `AdamOptimizer` implementation with convergence properties
-
-3. **Learning Rate Scheduling** (Medium)
-   - Context: Scheduling learning rates improves convergence and generalization
-   - Key Concepts: Warmup, decay schedules, cyclical learning rates
-   - Output: Multiple scheduler implementations and their effects
-
-4. **Newton's Method and Quasi-Newton** (Medium-Hard)
-   - Context: Second-order methods for faster convergence in certain regimes
-   - Key Concepts: Hessian approximation, L-BFGS, line search
-   - Output: Implementation and comparison with first-order methods
-
-5. **Constrained Optimization** (Hard)
-   - Context: Many real problems have constraints (e.g., pruning, knowledge distillation)
-   - Key Concepts: Lagrange multipliers, penalty methods, projected gradients
-   - Output: Solvers for constrained optimization problems
+**Planned Problems:**
+1. Gradient Descent Variants (Easy-Medium)
+2. Adam Optimizer (Medium)
+3. Learning Rate Scheduling (Medium)
+4. Newton's Method and Quasi-Newton (Medium-Hard)
+5. Constrained Optimization (Hard)
 
 ---
 
@@ -178,112 +180,55 @@ Each chapter contains:
 
 ### Chapter 5: Training Efficiency & Memory
 
+**Status**: NOT STARTED
+
 **Learning Objectives:**
 - Implement gradient checkpointing and mixed-precision training
 - Understand batch size effects on convergence
 - Optimize memory usage during backpropagation
-- Profile and improve training efficiency
 
-**Problems:**
-
-1. **Gradient Accumulation** (Easy-Medium)
-   - Context: Simulating larger batch sizes on limited hardware
-   - Key Concepts: Gradient scaling, effective batch size, training stability
-   - Output: Gradient accumulation mechanism with loss tracking
-
-2. **Gradient Checkpointing** (Medium)
-   - Context: Reducing memory for deep networks by recomputing activations
-   - Key Concepts: Activation storage, forward/backward trade-offs, implementation
-   - Output: Checkpointing wrapper for layer sequences
-
-3. **Mixed-Precision Training** (Medium)
-   - Context: Using FP16 for speed and memory with FP32 for stability
-   - Key Concepts: Numeric precision, loss scaling, gradient underflow
-   - Output: Mixed-precision training loop with appropriate scaling
-
-4. **Data Loading and Batching** (Medium-Hard)
-   - Context: Efficient data pipelines are critical for training speed
-   - Key Concepts: Prefetching, caching, dynamic batching, multi-worker loading
-   - Output: Custom data loader with performance profiling
-
-5. **Advanced Memory Optimization** (Hard)
-   - Context: Techniques used in production training of large models
-   - Key Concepts: Activation recomputation scheduling, parameter sharding, zero-copy operations
-   - Output: Comprehensive memory optimization combining multiple techniques
+**Planned Problems:**
+1. Gradient Accumulation (Easy-Medium)
+2. Gradient Checkpointing (Medium)
+3. Mixed-Precision Training (Medium)
+4. Data Loading and Batching (Medium-Hard)
+5. Advanced Memory Optimization (Hard)
 
 ---
 
 ### Chapter 6: Inference Efficiency & Quantization
 
+**Status**: NOT STARTED
+
 **Learning Objectives:**
 - Implement model quantization (INT8, dynamic quantization)
 - Optimize inference through pruning and distillation
 - Understand latency vs accuracy trade-offs
-- Profile and improve inference speed
 
-**Problems:**
-
-1. **Post-Training Quantization** (Easy-Medium)
-   - Context: Reducing model size for deployment without retraining
-   - Key Concepts: Calibration, scale factors, INT8 representation
-   - Output: INT8 quantization with calibration
-
-2. **Quantization-Aware Training** (Medium)
-   - Context: Training with quantization awareness for better accuracy
-   - Key Concepts: Fake quantization, simulated quantization, gradient flow
-   - Output: QAT implementation with training loop
-
-3. **Pruning Strategies** (Medium)
-   - Context: Removing unnecessary parameters reduces computation
-   - Key Concepts: Magnitude pruning, structured pruning, sparsity
-   - Output: Pruning algorithms and sparsity analysis
-
-4. **Knowledge Distillation** (Medium-Hard)
-   - Context: Compressing knowledge into smaller, faster models
-   - Key Concepts: Temperature scaling, soft targets, loss weighting
-   - Output: Distillation loss and training procedure
-
-5. **Inference Optimization Pipeline** (Hard)
-   - Context: Combining multiple techniques for production inference
-   - Key Concepts: Model fusion, graph optimization, kernel selection, batching
-   - Output: End-to-end inference optimization combining quantization, pruning, distillation
+**Planned Problems:**
+1. Post-Training Quantization (Easy-Medium)
+2. Quantization-Aware Training (Medium)
+3. Pruning Strategies (Medium)
+4. Knowledge Distillation (Medium-Hard)
+5. Inference Optimization Pipeline (Hard)
 
 ---
 
 ### Chapter 7: Dataset Processing & Shuffling
 
+**Status**: NOT STARTED
+
 **Learning Objectives:**
 - Implement efficient data shuffling algorithms
 - Understand data preprocessing pipelines
 - Apply augmentation strategies
-- Handle imbalanced and skewed datasets
 
-**Problems:**
-
-1. **Efficient Shuffling Algorithms** (Easy-Medium)
-   - Context: Large datasets require shuffle strategies that don't load everything into memory
-   - Key Concepts: Fisher-Yates, stratified sampling, shuffle buffers
-   - Output: Multiple shuffling implementations with memory/speed trade-offs
-
-2. **Data Normalization and Standardization** (Medium)
-   - Context: Proper normalization significantly affects model training
-   - Key Concepts: Z-score normalization, whitening, running statistics
-   - Output: Normalization implementations with handling of edge cases
-
-3. **Data Augmentation** (Medium)
-   - Context: Augmentation improves generalization and data efficiency
-   - Key Concepts: Transformations, composition, probabilistic application
-   - Output: Augmentation pipeline for images and text
-
-4. **Handling Imbalanced Data** (Medium-Hard)
-   - Context: Many real datasets have class imbalance
-   - Key Concepts: Oversampling, undersampling, SMOTE, weighted losses
-   - Output: Resampling strategies and loss weighting
-
-5. **Advanced Data Pipelines** (Hard)
-   - Context: Production data pipelines require handling multiple formats and scales
-   - Key Concepts: Streaming, validation, caching, multi-format support
-   - Output: Robust pipeline with validation and error handling
+**Planned Problems:**
+1. Efficient Shuffling Algorithms (Easy-Medium)
+2. Data Normalization and Standardization (Medium)
+3. Data Augmentation (Medium)
+4. Handling Imbalanced Data (Medium-Hard)
+5. Advanced Data Pipelines (Hard)
 
 ---
 
@@ -291,75 +236,37 @@ Each chapter contains:
 
 ### Chapter 8: Loss Functions & Scaling Laws
 
+**Status**: NOT STARTED
+
 **Learning Objectives:**
 - Understand various loss functions and when to use them
 - Understand scaling laws and their implications
 - Implement custom loss functions
-- Analyze loss behavior and training dynamics
 
-**Problems:**
-
-1. **Cross-Entropy and Variants** (Easy-Medium)
-   - Context: Cross-entropy is foundational; variants handle different scenarios
-   - Key Concepts: Categorical/binary cross-entropy, label smoothing, focal loss
-   - Output: Multiple loss function implementations with numerical stability
-
-2. **Contrastive Learning Losses** (Medium)
-   - Context: Self-supervised learning uses contrastive objectives
-   - Key Concepts: Similarity metrics, temperature, mining strategies
-   - Output: SimCLR and triplet loss implementations
-
-3. **Ranking and Margin Losses** (Medium)
-   - Context: Ranking problems (recommendation, retrieval) use specialized losses
-   - Key Concepts: Margin-based losses, hinge loss, ranking metrics
-   - Output: Ranking loss implementations with metric analysis
-
-4. **Custom Loss Functions** (Medium-Hard)
-   - Context: Domain-specific problems often require custom losses
-   - Key Concepts: Gradient computation, numerical stability, weighting schemes
-   - Output: Implementation of domain-specific loss with examples
-
-5. **Scaling Laws and Compute Optimization** (Hard)
-   - Context: Understanding scaling laws guides training decisions
-   - Key Concepts: Power laws, loss scaling, compute allocation, convergence prediction
-   - Output: Loss scaling analysis and prediction models
+**Planned Problems:**
+1. Cross-Entropy and Variants (Easy-Medium)
+2. Contrastive Learning Losses (Medium)
+3. Ranking and Margin Losses (Medium)
+4. Custom Loss Functions (Medium-Hard)
+5. Scaling Laws and Compute Optimization (Hard)
 
 ---
 
 ### Chapter 9: Debugging & Sanity Checking
 
+**Status**: NOT STARTED
+
 **Learning Objectives:**
 - Implement debugging techniques for ML models
 - Perform sanity checks to catch common errors
 - Analyze model behavior and failure modes
-- Use visualization and analysis tools effectively
 
-**Problems:**
-
-1. **Gradient Checking** (Easy-Medium)
-   - Context: Verifying gradient correctness prevents subtle training bugs
-   - Key Concepts: Numerical differentiation, relative error, finite differences
-   - Output: Gradient checker with detailed error reporting
-
-2. **Activation Statistics Monitoring** (Medium)
-   - Context: Monitoring activations reveals training pathologies
-   - Key Concepts: Mean/variance tracking, dead neurons, saturation detection
-   - Output: Activation monitor with statistics and visualization
-
-3. **Loss Curve Analysis** (Medium)
-   - Context: Loss curves reveal many training issues
-   - Key Concepts: Divergence detection, convergence verification, overfitting signals
-   - Output: Loss analyzer with automatic issue detection
-
-4. **Weight and Gradient Analysis** (Medium-Hard)
-   - Context: Analyzing weight/gradient distributions catches training issues
-   - Key Concepts: Initialization verification, gradient flow, dead weights
-   - Output: Statistical analyzer for weights and gradients
-
-5. **Comprehensive Sanity Check Suite** (Hard)
-   - Context: Production training requires automated sanity checks
-   - Key Concepts: Multiple check types, early termination criteria, logging
-   - Output: Complete sanity check system combining all techniques
+**Planned Problems:**
+1. Gradient Checking (Easy-Medium)
+2. Activation Statistics Monitoring (Medium)
+3. Loss Curve Analysis (Medium)
+4. Weight and Gradient Analysis (Medium-Hard)
+5. Comprehensive Sanity Check Suite (Hard)
 
 ---
 
@@ -370,6 +277,7 @@ Each chapter contains:
 - Comprehensive docstrings
 - Clear comments for non-obvious logic
 - Minimal code; prefer clarity over cleverness
+- Starter code with TODO markers, not complete solutions
 
 ### Testing Philosophy
 - 2-3 focused tests per problem
@@ -381,29 +289,67 @@ Each chapter contains:
 - Contextual introductions with real-world examples
 - Key concepts explained only as needed for the exercise
 - Clear problem statements and requirements
-- Practical examples demonstrating concepts
+- **Example code** demonstrating concepts without revealing solutions
+- Practical examples with expected outputs
 
 ### Notebook Format
 - Open in Colab button at top
 - Exercise-driven layout (not topical refresher then exercises)
+- Contextual examples before starter code
 - Hints in collapsible markdown sections
 - Test output with clear pass/fail indicators
+
+### Exercise Structure
+Each problem has this pattern:
+```
+1. Problem Description (Markdown)
+   - Contextual Introduction
+   - Key Concepts
+   - Problem Statement
+   - Requirements
+
+2. Example Code (Code Cell)
+   - Shows concepts in action
+   - Demonstrates expected behavior
+   - Does NOT give away solution
+
+3. Starter Code (Code Cell)
+   - Function signatures with docstrings
+   - TODO markers for student implementation
+   - Test function calls
+
+4. Hints (Collapsible Markdown)
+   - Conceptual guidance
+   - Key algorithm insight
+   - Common pitfall warnings
+```
 
 ---
 
 ## Progression and Validation
 
-Each chapter will be completed and validated before moving to the next:
+✅ = Complete and validated
+🔄 = In progress
+⏳ = Planned
 
-1. **Chapter 1**: Data Structures & Complexity ✅ (Completed)
-2. **Chapter 2**: Classic DP/Graphs ✅ (Completed - pedagogical revision)
-3. **Chapter 3**: Streaming & Online Algorithms (Next)
-4. **Chapter 4**: Optimization Algorithms
-5. **Chapter 5**: Training Efficiency & Memory
-6. **Chapter 6**: Inference Efficiency & Quantization
-7. **Chapter 7**: Dataset Processing & Shuffling
-8. **Chapter 8**: Loss Functions & Scaling Laws
-9. **Chapter 9**: Debugging & Sanity Checking
+1. **Chapter 1**: Data Structures & Complexity ✅
+   - All 5 problems with exercises
+   - 21 TODOs total
+   - Examples for all problems
+   - JSON validated
+
+2. **Chapter 2**: Classic DP/Graphs ✅
+   - All 5 problems with contextual introductions
+   - Ready for exercise conversion (same pattern as Ch1)
+   - Comprehensive tests included
+
+3. **Chapter 3**: Streaming & Online Algorithms ⏳
+4. **Chapter 4**: Optimization Algorithms ⏳
+5. **Chapter 5**: Training Efficiency & Memory ⏳
+6. **Chapter 6**: Inference Efficiency & Quantization ⏳
+7. **Chapter 7**: Dataset Processing & Shuffling ⏳
+8. **Chapter 8**: Loss Functions & Scaling Laws ⏳
+9. **Chapter 9**: Debugging & Sanity Checking ⏳
 
 ---
 
@@ -430,3 +376,18 @@ This textbook is designed for:
 - Comfortable with Python and data structures
 - Basic understanding of algorithms and complexity analysis
 - Familiarity with machine learning concepts (loss functions, optimization)
+
+---
+
+## Quality Checklist
+
+For each completed chapter:
+- [ ] All 5 problems have contextual introductions
+- [ ] All problems have real-world examples or use cases
+- [ ] All problems have example code demonstrating concepts
+- [ ] All code cells are starter code with TODOs (not solutions)
+- [ ] Each problem has 2-3 focused tests
+- [ ] All tests pass when TODOs are properly implemented
+- [ ] All hints are collapsible and provide guidance, not solutions
+- [ ] JSON notebook is valid and parses correctly
+- [ ] Chapter is reviewed for pedagogy and clarity
