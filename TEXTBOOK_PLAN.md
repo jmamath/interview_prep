@@ -92,7 +92,7 @@ Each chapter contains:
 
 ### ✅ Chapter 2: Classic DP/Graphs for ML Engineers
 
-**Status**: COMPLETE
+**Status**: COMPLETE (Enhanced with AlgoMonster-style pedagogy)
 
 **Learning Objectives:**
 - Implement beam search variants for sequence generation
@@ -100,19 +100,33 @@ Each chapter contains:
 - Apply constraints during generation
 - Balance quality and diversity in outputs
 
+**Pedagogical Structure:**
+
+**Foundation Section: Beam Search Introduction**
+- What is Beam Search? (plain language explanation, comparison to greedy/exhaustive search)
+- Why Beam Search? (concrete French translation example showing greedy failure)
+- Core Mechanics (step-by-step walkthrough with 3-word vocabulary)
+- When to Use (real-world applications: translation, summarization, captioning)
+- Key Parameters and Trade-offs (beam width, quality vs speed)
+
 **Problems & Structure:**
 
 1. **Simple Beam Search** (Easy)
    - Context: Machine translation use case
    - Key Concepts: Beam width, greedy vs beam search
    - Example: Step-by-step beam search walkthrough with small vocabulary
+   - **Deducing the Algorithm**: Design decisions for beam maintenance, score tracking, termination
+   - **Implementation Details**: Using heapq, handling end tokens, edge cases, O(max_length × k × |V| × log(k×|V|)) complexity
    - Exercise: Implement basic `BeamSearch` class
    - Tests: 3 test cases
 
 2. **Top-k Beam Search with Scores** (Medium)
    - Context: Summary generation diversity
-   - Key Concepts: Length normalization, diversity penalty, temperature sampling
+   - Key Concepts: Length normalization, diversity penalty
    - Example: Length normalization vs diversity penalty calculations
+   - **Intuition: Length Bias Problem**: Why raw scores favor shorter sequences, normalization solution
+   - **Deducing Diversity Penalty**: N-gram overlap metric, quality-diversity balance
+   - **Implementation Details**: Computing bigrams with zip(), when to apply penalties, tuning parameters
    - Exercise: Extend to `TopKBeamSearch` with scoring
    - Tests: 3 test cases
 
@@ -120,6 +134,9 @@ Each chapter contains:
    - Context: POS tagging in NLP
    - Key Concepts: HMMs, transition/emission probabilities, forward/backward passes
    - Example: Manual Viterbi computation trace for "the cat sat"
+   - **Intuition: Why Dynamic Programming?**: Exponential explosion problem (N^T), optimal substructure
+   - **Deducing the DP Table**: Table dimensions, cell meanings, backpointers, recurrence relation
+   - **Implementation Details**: Log probabilities for underflow, unknown word smoothing, O(T × N²) complexity
    - Exercise: Implement `HMMTagger` with Viterbi algorithm
    - Tests: 3 test cases
 
@@ -127,6 +144,9 @@ Each chapter contains:
    - Context: Chatbot safety constraints
    - Key Concepts: Constraint satisfaction, early pruning
    - Example: How constraints filter beam candidates and prune search space
+   - **Intuition: Early Pruning**: Generate-then-filter vs prune-during-search efficiency (10,000× savings)
+   - **Deducing the Design**: Abstract constraint interface, when to check, combining constraints
+   - **Implementation Details**: ABC implementation, constraint checking in expansion loop, performance implications
    - Exercise: Implement constraint classes and `ConstrainedBeamSearch`
    - Tests: 3 test cases
 
@@ -134,16 +154,25 @@ Each chapter contains:
    - Context: Creative writing diversity
    - Key Concepts: Sequence similarity, grouping, quality-diversity tradeoff
    - Example: Jaccard similarity calculation and grouping for diversity
+   - **Intuition: Quality-Diversity Trade-off**: Why beam search converges, grouping concept
+   - **Deducing Jaccard Similarity**: Why bigrams > word overlap, formula, thresholds
+   - **Implementation Details**: Group beam architectures, representative selection, tuning diversity_strength
    - Exercise: Implement `DiverseBeamSearch` with similarity-based grouping
    - Tests: 3 test cases
 
 **Implementation Details:**
+- Enhanced with AlgoMonster pedagogical approach (intuition, deducing algorithms, implementation details)
+- Foundational introduction before problems explaining beam search mechanics
 - All problems have contextual introductions with real-world ML applications
 - All problems include example code demonstrating concepts without revealing solutions
+- Each problem includes "Deducing" sections to help students derive algorithms (not memorize)
+- Each problem includes "Intuition" sections with plain language explanations
+- Each problem includes detailed "Implementation Details" with complexity analysis
 - Examples cover: Beam search steps, length normalization, Viterbi computation, constraint filtering, sequence similarity
+- Concrete numerical walkthroughs (not abstract variables)
 - Starter code with TODO markers (not complete solutions)
-- 2-3 focused tests per questi for validation
-- JSON notebook is valid and parses correctly
+- 2-3 focused tests per problem for validation
+- JSON notebook is valid and parses correctly (1714 lines, 22 cells)
 
 ---
 
@@ -426,8 +455,11 @@ Each problem has this pattern:
 
 2. **Chapter 2**: Classic DP/Graphs ✅
     - All 5 problems with contextual introductions
-    - Ready for exercise conversion (same pattern as Ch1)
+    - Enhanced with AlgoMonster-style pedagogy (intuition, deducing, implementation)
+    - Foundational beam search introduction section
+    - Each problem includes "Deducing the Algorithm" and "Implementation Details" subsections
     - Comprehensive tests included
+    - JSON validated (1714 lines, 22 cells)
 
 3. **Chapter 3**: Streaming & Online Algorithms ✅
    - All 5 problems with contextual introductions
